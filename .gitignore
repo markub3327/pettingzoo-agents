@@ -5,5 +5,3 @@ dataset*/
 logs/
 
 slurm.sh
-
-*.txt
