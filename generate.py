@@ -8,7 +8,7 @@ from collections import deque
 
 
 # Metadata
-NUM_GAMES = 2 # 250_000  # Total number of games to generate
+NUM_GAMES = 250_000  # Total number of games to generate
 
 ### PettingZoo
 env_names = (
