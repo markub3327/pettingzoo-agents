@@ -1,0 +1,4 @@
+{
+    "classic/tictactoe-v3": ["Player X", "Player O"],
+    "classic/rps-v2": ["Agent 1", "Agent 2"]
+}
