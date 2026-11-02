@@ -207,7 +207,7 @@ def main():
                     "images": Sequence(Image()),
                 }
             ),
-            num_proc=40,
+            num_proc=32,
             gen_kwargs={
                 "shards": shards,
                 "env_name": env_name,
