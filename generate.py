@@ -3,7 +3,7 @@ import json
 import numpy as np
 import hashlib
 from pettingzoo import make
-from datasets import Dataset, Features, Value, Image, Version, Sequence
+from datasets import Dataset, Features, Value, Image, Version, List
 from collections import deque
 
 
@@ -201,10 +201,10 @@ def main():
                         "action": Value("string"),
                         "reward": Value("float32"),
                         "status": Value("int32"),
-                        "frames_similarity": Sequence(Value("float32")),
+                        "frames_similarity": List(Value("float32")),
                         "info": Value("string"),
                     },
-                    "images": Sequence(Image()),
+                    "images": List(Image()),
                 }
             ),
             num_proc=32,
