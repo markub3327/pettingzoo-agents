@@ -21,10 +21,7 @@ def dataset_generator(shards, env_name, player_name):
     print(f"Generating the dataset for {env_name} environment.")
 
     # Init environment
-    if "rps" in env_name:
-        env = make("aec", env_name, render_mode="rgb_array", max_cycles=1)
-    else:
-        env = make("aec", env_name, render_mode="rgb_array")
+    env = make("aec", env_name, render_mode="rgb_array")
     for shard in shards:
         # Initialize the frame queue
         frame_queue = deque(maxlen=2)
@@ -76,7 +73,7 @@ def dataset_generator(shards, env_name, player_name):
                         obs += col + " | "
                     obs += "\n" + "+" + ("-" * 3 + "+") * 3 + "\n"
             elif "rps" in env_name:
-                obs = f"The current observation indicates that the opponent's last action was {observation}."
+                obs = f"The current observation indicates that the opponent's last action was {state}."
             else:
                 raise ValueError(f"Unsupported environment: {env_name}")
             players[agent]['observation'].append(obs)
@@ -250,7 +247,7 @@ def main():
         env_name = env_name.replace("/", "_")
         dataset.save_to_disk(
             f"/mnt/project/perun2601343/pettingzoo/dataset/{env_name}",
-            num_proc=7,
+            num_proc=6,
         )
 
 if __name__ == "__main__":
