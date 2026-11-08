@@ -117,7 +117,7 @@ def dataset_generator(shards, env_name, player_name):
                     status = 3
                 # Randomly select a player if the game is a draw
                 else:
-                    selected_player = random.choice(['player_1', 'player_2'])
+                    selected_player = random.choice(list(players))
                     losing_player = None
                     status = 4
             else:
